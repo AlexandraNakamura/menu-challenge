@@ -9,8 +9,14 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const cliente = {
+        nome: req.body.nome,
+        id_pedidos: req.body.id_pedidos,
+        localizacao: req.body.localizacao,
+    }
     res.status(201).send({
-        mensagem:'Cadastro de cliente'
+        mensagem:'Cadastro de cliente',
+        clienteCadastrado: cliente
     });
 });
 

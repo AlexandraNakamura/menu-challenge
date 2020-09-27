@@ -9,8 +9,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const pedido = {
+        nomePedido: req.body.nomePedido,
+        quantidade: req.body.quantidade,
+        preco: req.body.preco,
+        data: req.body.data,
+    }
     res.status(201).send({
-        mensagem:'Cadastro de pedido'
+        mensagem:'Cadastro de pedido',
+        pedidoCadastrado: pedido
     });
 });
 
