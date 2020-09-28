@@ -30,7 +30,7 @@ router.get('/:id_clientes', (req, res, next) => {
 
 router.put('/:id_clientes', (req, res, next) => {
     const id = req.params.id_clientes
-    res.status(405).send({
+    res.status(200).send({
         mensagem:'Atualizando um cliente',
         id_clientes:id
     });
@@ -38,7 +38,7 @@ router.put('/:id_clientes', (req, res, next) => {
 
 router.delete('/:id_clientes', (req, res, next) => {
     const id = req.params.id_clientes
-    res.status(405).send({
+    res.status(200).send({
         mensagem:'Deletando um cliente',
         id_clientes:id
     });

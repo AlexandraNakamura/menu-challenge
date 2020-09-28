@@ -31,7 +31,7 @@ router.get('/:id_pedidos', (req, res, next) => {
 
 router.put('/:id_pedidos', (req, res, next) => {
     const id = req.params.id_pedidos
-    res.status(405).send({
+    res.status(200).send({
         mensagem:'Atualizando pedido',
         id_pedidos:id
     });
@@ -39,7 +39,7 @@ router.put('/:id_pedidos', (req, res, next) => {
 
 router.delete('/:id_pedidos', (req, res, next) => {
     const id = req.params.id_pedidos
-    res.status(405).send({
+    res.status(200).send({
         mensagem:'Deletando pedido',
         id_pedidos:id
     });
