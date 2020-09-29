@@ -1,30 +1,32 @@
 const express = require('express');
 const router = express.Router();
-
+    
+let cliente = [
+    { Nome:'Lucia', Localização: 'São Paulo', id_clientes: 1}
+]
 
 router.get('/', (req, res, next) => {
-    res.status(200).send({
-        mensagem:'Retorno de todos os cliente'
-    });
+    return res.json(cliente);
 });
 
 router.post('/', (req, res, next) => {
-    const cliente = {
-        nome: req.body.nome,
-        id_pedidos: req.body.id_pedidos,
-        localizacao: req.body.localizacao,
-    }
-    res.status(201).send({
-        mensagem:'Cadastro de cliente',
-        clienteCadastrado: cliente
-    });
+    const body = req.body 
+
+    if(!body)
+        return res.status(400).end()
+        
+    
+    cliente.push(body);
+    return res.json(body);
+
 });
 
 router.get('/:id_clientes', (req, res, next) => {
     const id = req.params.id_clientes
     res.status(200).send({
         mensagem:'Detalhe do cliente',
-        id_clientes:id
+                id_clientes:id
+                
     });
 });
 
